@@ -1,0 +1,42 @@
+version: 1.2.0
+cache: true
+
+endpoints:
+  openAI:
+    title: OpenAI
+    apiKey: "${OPENAI_API_KEY}"
+    
+  anthropic:
+    title: Anthropic  
+    apiKey: "${ANTHROPIC_API_KEY}"
+
+# Default model settings
+defaultModel: "gpt-4"
+defaultEndpoint: "openAI"
+
+# Model configurations
+models:
+  openAI:
+    "gpt-4":
+      contextLength: 8192
+      maxOutputTokens: 4096
+    "gpt-4-turbo":
+      contextLength: 128000
+      maxOutputTokens: 4096
+    "gpt-3.5-turbo":
+      contextLength: 16385
+      maxOutputTokens: 4096
+      
+  anthropic:
+    "claude-3-opus":
+      contextLength: 200000
+      maxOutputTokens: 4096
+    "claude-3-sonnet":
+      contextLength: 200000
+      maxOutputTokens: 4096
+    "claude-3-haiku":
+      contextLength: 200000
+      maxOutputTokens: 4096
+
+# Interface settings moved to config.yaml
+# Registration settings can be configured per deployment

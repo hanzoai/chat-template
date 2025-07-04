@@ -1,0 +1,49 @@
+# Local development compose file for standalone chat
+services:
+  chat:
+    image: ghcr.io/hanzoai/chat:latest
+    container_name: hanzo-chat-dev
+    ports:
+      - "3081:3080"
+    env_file:
+      - .env
+    environment:
+      - MONGO_URI=mongodb://mongodb:27017/hanzo-chat
+      # Demo mode for localhost development
+      - DEMO_MODE=true
+      - DEMO_EMAIL=wow@this.com
+      - DEMO_PASSWORD=demo1234
+      - SHOW_DEMO_LOGIN=true
+    volumes:
+      # Brand assets
+      - ./branding:/app/client/public/assets/brand:ro
+      
+      # Custom tools/MCP servers
+      - ./tools:/app/tools:ro
+      
+      # Custom models config
+      - ./models.yaml:/app/chat.yaml:ro
+      
+      # Data persistence
+      - chat-uploads:/app/uploads
+      - chat-logs:/app/api/logs
+      
+    depends_on:
+      - mongodb
+    restart: unless-stopped
+
+  mongodb:
+    image: mongo:latest
+    container_name: hanzo-mongodb-dev
+    volumes:
+      - mongodb-data:/data/db
+    restart: unless-stopped
+
+networks:
+  default:
+    name: ${BRAND_NAME:-hanzo}-network
+
+volumes:
+  mongodb-data:
+  chat-uploads:
+  chat-logs:

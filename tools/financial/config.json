@@ -1,0 +1,36 @@
+{
+  "name": "ai-financial-tools",
+  "description": "Financial document analysis tools for AI",
+  "version": "1.0.0",
+  "tools": [
+    {
+      "name": "extract_financial_metrics",
+      "description": "Extract key financial metrics from documents",
+      "parameters": {
+        "document_id": {
+          "type": "string",
+          "description": "ID of the document to analyze",
+          "required": true
+        }
+      }
+    },
+    {
+      "name": "calculate_credit_score",
+      "description": "Calculate credit score based on financial data",
+      "parameters": {
+        "revenue": {
+          "type": "number",
+          "description": "Annual revenue"
+        },
+        "assets": {
+          "type": "number", 
+          "description": "Total assets"
+        },
+        "liabilities": {
+          "type": "number",
+          "description": "Total liabilities"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+version: 1.2.0
+cache: true
+
+endpoints:
+  openAI:
+    title: OpenAI
+    apiKey: "${OPENAI_API_KEY}"
+    
+  anthropic:
+    title: Anthropic
+    apiKey: "${ANTHROPIC_API_KEY}"
+    
+  custom:
+    - name: "Hanzo AI"
+      apiKey: "${HANZO_API_KEY}"
+      baseURL: "${HANZO_LLM_GATEWAY_URL:-http://localhost:4000}"
+      models:
+        default: ["gpt-4", "claude-3-opus", "llama-3.1"]
+        fetch: true
+      titleModel: "gpt-4"
+      titleConvo: true
+
+interface:
+  appTitle: "${APP_TITLE:-Hanzo AI Chat}"
+  customWelcome: "Welcome to Hanzo AI Chat! I'm here to assist you with your questions and tasks."
+  
+  # UI Features
+  endpointsMenu: true
+  modelSelect: true
+  parameters: true
+  sidePanel: true
+  presets: true
+  
+  # Enable multimodal features
+  multimodal: true
+  imageVision: true
+  fileUploads: true
+  
+  # Enhanced features
+  prompts: true
+  bookmarks: true
+  multiConvo: true
+  
+  # Branding
+  customFooter: "${APP_DESCRIPTION:-AI Chat powered by Hanzo}"
+
+  
+# File handling
+fileConfig:
+  endpoints:
+    all:
+      fileLimit: 5
+      fileSizeLimit: 10  # 10MB
+      totalSizeLimit: 50  # 50MB
+      supportedMimeTypes:
+        - "application/pdf"
+        - "application/vnd.ms-excel"
+        - "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
+        - "text/csv"
+        - "image/jpeg"
+        - "image/png"
+        - "image/webp"
+
+# Registration
+registration:
+  socialLogins: ["google", "github"]
+  
+# Rate limiting  
+rateLimits:
+  fileUploads:
+    ipMax: 10
+    ipWindowInMinutes: 60
+    userMax: 50
+    userWindowInMinutes: 60

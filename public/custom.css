@@ -1,0 +1,39 @@
+/* Fix theme flickering - force light mode */
+html {
+  color-scheme: light !important;
+}
+
+body {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Prevent dark mode flash */
+[data-theme="dark"],
+[data-theme="auto"],
+.dark {
+  background-color: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* Override any dark mode styles */
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: light !important;
+  }
+  
+  body {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+  }
+}
+
+/* Prevent theme transitions on load */
+* {
+  transition: none !important;
+}
+
+/* Re-enable transitions after load */
+body.loaded * {
+  transition: all 0.3s ease !important;
+}
