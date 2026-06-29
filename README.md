@@ -1,3 +1,5 @@
+<p align="center"><img src=".github/hero.svg" alt="chat-template" width="880"></p>
+
 # AI Chat - Custom Branded Deployment
 
 A minimal, clean deployment of Hanzo Chat with AI branding and custom tools.
