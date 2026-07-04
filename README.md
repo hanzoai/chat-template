@@ -2,6 +2,8 @@
 
 # AI Chat - Custom Branded Deployment
 
+[![Deploy on Hanzo](https://hanzo.app/deploy-badge.svg)](https://hanzo.app/new?template=https://github.com/hanzoai/chat-template)
+
 A minimal, clean deployment of Hanzo Chat with AI branding and custom tools.
 
 ## Quick Start
