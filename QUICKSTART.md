@@ -147,7 +147,7 @@ lsof -i :3081
 
 - Issues: Create an issue in this repo
 - Docs: https://docs.hanzo.ai
-- Community: https://discord.gg/hanzoai
+- Community: https://discord.gg/XthHQQj
 
 ---
 

@@ -247,7 +247,7 @@ lsof -i :5432  # PostgreSQL
 
 - **Documentation**: [docs.hanzo.ai](https://docs.hanzo.ai)
 - **GitHub Issues**: [github.com/hanzoai/ai-template](https://github.com/hanzoai/ai-template)
-- **Discord**: [discord.gg/hanzoai](https://discord.gg/hanzoai)
+- **Discord**: [discord.gg/XthHQQj](https://discord.gg/XthHQQj)
 - **Email**: support@hanzo.ai
 
 ## Recent Updates
